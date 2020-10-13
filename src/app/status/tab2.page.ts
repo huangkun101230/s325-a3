@@ -160,6 +160,7 @@ export class Tab2Page {
     const sensorReadingArray = sensorReading.split(",");
 
     // update only if motion was detected in that room
+    // sensorReadingArray[2] means the motion_status
     if (sensorReadingArray[2] == 1) {
       this.noMovement = false; // movement has now been detected
       this.createPieChart(); // redraw the pie char

@@ -40,13 +40,15 @@ export class MqttService {
     const sensorReadingArray = sensorReading.split(",");
 
     // update fields only if motion was detected in that room
+    // sensorReadingArray[2] means the motion_status
     if (sensorReadingArray[2] == 1) {
       // get the time in hh:mm format to store
       var time = sensorReadingArray[0].substring(11, sensorReadingArray[0].length - 3
       );
       // update the most recent location, and increase the count of moving to the specific room
       switch (
-      sensorReadingArray[1] // switching the case between each records
+      // sensorReadingArray[1] means the sensor_location
+      sensorReadingArray[1]
       ) {
         case "living":
           this.recentLocation = this.living.roomName;
@@ -76,6 +78,8 @@ export class MqttService {
       }
     }
     // update the battery status of each room
+    // sensorReadingArray[1] means the sensor_location
+    // sensorReadingArray[3] means the battery_status
     this.updateBatteryStatus(sensorReadingArray[1], sensorReadingArray[3]);
   };
 
