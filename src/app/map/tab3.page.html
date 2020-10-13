@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Real-time Location</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="card-col" width-50>
+        <!-- kitchen map representation, if it is the active room, highlight it green -->
+        <ion-card class="card half-card-left" *ngIf="this.isActive('Kitchen')"
+          style="background-color: #2ecc71; color: white">
+          <div class="card-content">
+            <p class="card-title" style="color: white">Kitchen</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[1]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[1]}}</p>
+          </div>
+        </ion-card>
+        <!-- kitchen map representation -->
+        <ion-card class="card half-card-left" *ngIf="!this.isActive('Kitchen')">
+          <div class="card-content">
+            <p class="card-title">Kitchen</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[1]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[1]}}</p>
+          </div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="card-col" width-50>
+        <!-- dining room map representation, if it is the active room, highlight it green -->
+        <ion-card class="card half-card-right" *ngIf="this.isActive('Dining Room')"
+          style="background-color: #2ecc71; color: white">
+          <div class="card-content">
+            <p class="card-title" style="color: white">Dining Room</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[2]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[2]}}</p>
+          </div>
+        </ion-card>
+        <!-- dining room map representation -->
+        <ion-card class="card half-card-right" *ngIf="!this.isActive('Dining Room')">
+          <div class="card-content">
+            <p class="card-title">Dining Room</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[2]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[2]}}</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- living room map representation, if it is the active room, highlight it green -->
+    <ion-card class="card full-card" *ngIf="this.isActive('Living Room')"
+      style="background-color: #2ecc71; color: white">
+      <div class="card-content">
+        <p class="card-title" style="color: white">Living Room</p>
+        <!-- display battery and time information dynamically -->
+        <p class="card-info">Battery: {{this.batteryLevels[0]}}%</p>
+        <p class="card-info">Last seen: {{this.timeLastSeenInRoom[0]}}</p>
+      </div>
+    </ion-card>
+    <!-- living room map representation -->
+    <ion-card class="card full-card" *ngIf="!this.isActive('Living Room')">
+      <div class="card-content">
+        <p class="card-title">Living Room</p>
+        <!-- display battery and time information dynamically -->
+        <p class="card-info">Battery: {{this.batteryLevels[0]}}%</p>
+        <p class="card-info">Last seen: {{this.timeLastSeenInRoom[0]}}</p>
+      </div>
+    </ion-card>
+
+    <ion-row>
+      <ion-col class="card-col" width-50>
+        <!-- bedroom map representation, if it is the active room, highlight it green -->
+        <ion-card class="card half-card-left" *ngIf="this.isActive('Bedroom')"
+          style="background-color: #2ecc71; color: white">
+          <div class="card-content">
+            <p class="card-title" style="color: white">Bedroom</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[4]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[4]}}</p>
+          </div>
+        </ion-card>
+        <!-- bedroom map representation -->
+        <ion-card class="card half-card-left" *ngIf="!this.isActive('Bedroom')">
+          <div class="card-content">
+            <p class="card-title">Bedroom</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[4]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[4]}}</p>
+          </div>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="card-col" width-50>
+        <!-- toilet map representation, if it is the active room, highlight it green -->
+        <ion-card class="card half-card-right" *ngIf="this.isActive('Toilet')"
+          style="background-color: #2ecc71; color: white">
+          <div class="card-content">
+            <p class="card-title" style="color: white">Toilet</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[3]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[3]}}</p>
+          </div>
+        </ion-card>
+        <!-- toilet map representation -->
+        <ion-card class="card half-card-right" *ngIf="!this.isActive('Toilet')">
+          <div class="card-content">
+            <p class="card-title">Toilet</p>
+            <!-- display battery and time information dynamically -->
+            <p class="card-info">Battery: {{this.batteryLevels[3]}}%</p>
+            <p class="card-info">Last seen: {{this.timeLastSeenInRoom[3]}}</p>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,83 @@
+// cards holding various dashboard information
+.card {
+  height: 100px;
+  border-radius: 10px;
+  border: 1px solid #fafafa;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+  -moz-box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+  box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+// everything within the card itself
+.card-content {
+  padding: 24px 0 10px 20px;
+}
+
+// the card titles for full length cards
+.card-title {
+  margin-bottom: 4px !important;
+}
+
+// different text colours for each card label
+.last-seen {
+  color: #00a8ff;
+}
+
+.time {
+  color: #fa983a;
+}
+
+.activity {
+  color: #26de81;
+}
+
+// no spacing between paragraphs
+p {
+  margin: 0 !important;
+}
+
+// format the information being displaying on cards
+.card-info {
+  font-size: 1.5rem;
+  color: #595959;
+}
+
+// adjustment the position of cards
+.last-seen-card {
+  margin-top: 20% !important;
+}
+
+.activity-card {
+  height: 260px;
+  top: 10px;
+}
+
+// animate the connection status notification
+.slider {
+  margin-top: 25%;
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  animation-name: slide;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  padding-top: 5px;
+}
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-30px); // move up
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

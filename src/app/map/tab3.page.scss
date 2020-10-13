@@ -1,0 +1,56 @@
+// cards for holding room information
+.card {
+  height: 180px;
+  border-radius: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5;
+  margin-bottom: 0;
+  border: 1px solid #fafafa;
+  background-color: #ffffff;
+  // card shadow
+  -webkit-box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+  -moz-box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+  box-shadow: 0 8px 12px -2px rgba(148, 191, 224, 0.5);
+}
+
+// formatting for the content within the cards (rooms)
+.card-content {
+  padding: 10px 0 10px 20px;
+}
+
+// the card titles for full length cards
+.card-title {
+  font-size: 1.2rem;
+  color: #595959;
+}
+
+//make the half-cards closer together
+ion-col {
+  padding: 0 !important;
+  margin: 0 !important;
+  top: -5px;
+}
+
+.card-col {
+  margin-right: -20px;
+}
+
+.full-card {
+  top: -5px;
+}
+
+// adjust the hafl cards
+.half-card-left {
+  height: 150px;
+  width: 87%;
+}
+
+.half-card-right {
+  height: 150px;
+  width: 87%;
+}
+
+ion-grid {
+  margin-top: 15%;
+}

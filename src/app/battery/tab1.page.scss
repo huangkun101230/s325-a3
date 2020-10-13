@@ -1,0 +1,55 @@
+ion-slides {
+  margin-top: 20%;
+}
+
+// circle with battery status
+.circle {
+  padding-top: 100px;
+  padding-bottom: 10px;
+}
+
+// ensure there is a break between circle and text
+.circle span {
+  display: block;
+}
+
+// format the room labels
+p {
+  color: #595959;
+  font-size: 1.4rem;
+}
+
+// bounce animate prompt to swipe forwards
+.forward {
+  display: block;
+  margin-left: 310px;
+  margin-top: 140px;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  font-size: 30px;
+}
+
+// shift horizontally (bounce left to right)
+@keyframes bounce {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.indicator {
+  display: block;
+  animation-name: bounce;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  font-size: 30px;
+  color: whitesmoke;
+}

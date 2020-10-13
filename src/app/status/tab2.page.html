@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- the card of the most recent location motion was detected -->
+  <ion-card class="card last-seen-card">
+    <div class="card-content">
+      <p class="card-title last-seen">Last seen in</p>
+      <p class="card-info">{{this.MQTT.getRecentLocation()}}</p>
+    </div>
+  </ion-card>
+
+  <!-- the card of the time since last motion was detected -->
+  <ion-card class="card">
+    <div class="card-content">
+      <p class="card-title time">Time since last motion</p>
+      <p class="card-info">{{this.getIdleTime()}}</p>
+    </div>
+  </ion-card>
+
+
+  <!-- the card of the total number of movements in different room -->
+  <ion-card class="card activity-card">
+    <div class="card-content">
+      <p class="card-title activity">Activity</p>
+
+      <!-- display information in a pie chart -->
+      <ion-card-content>
+        <canvas #pieChart></canvas>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+  <!-- the slider of the connection status, slides up from the bottom -->
+    <div *ngIf="this.getMQTTStatus() == 'Connected'" style="background-color: #26de81" class="slider">Connected</div>
+    <div *ngIf="this.getMQTTStatus() == 'Failed to connect'" style="background-color: #ff5b5b" class="slider">Failed to
+      connect</div>
+    <div *ngIf="this.getMQTTStatus() == 'Disconnected'" style="background-color: #ff5b5b" class="slider">Disconnected
+    </div>
+
+</ion-content>

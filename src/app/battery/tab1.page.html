@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Battery Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- the sides of showing battery status for each sensor-->
+  <ion-slides #slides (ionSlideDidChange)="slideChanged()" scrollbar="true" [options]="slideOpts">
+
+    <!-- living room battery status -->
+    <ion-slide class="slide">
+      <div class="circle">
+        <span>
+          <!-- battery percentage circle -->
+          <circle-progress [percent]="this.batteryLevels[0]" [radius]="130" [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8" [outerStrokeColor]="this.getBatteryColour(this.batteryLevels[0])"
+            [innerStrokeColor]="'#E8E8E8'" [animation]="true" [animationDuration]="300">
+          </circle-progress>
+        </span>
+        <span>
+          <p>Living Room</p>
+        </span>
+
+        <div class="indicator">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </div>
+      </div>
+    </ion-slide>
+
+    <!-- kitchen room battery status -->
+    <ion-slide class="slide">
+      <div class="circle">
+        <span>
+          <!-- battery percentage circle -->
+          <circle-progress [percent]="this.batteryLevels[1]" [radius]="130" [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8" [outerStrokeColor]="this.getBatteryColour(this.batteryLevels[1])"
+            [innerStrokeColor]="'#E8E8E8'" [animation]="true" [animationDuration]="300">
+          </circle-progress>
+        </span>
+        <span>
+          <p>Kitchen</p>
+        </span>
+      </div>
+    </ion-slide>
+
+    <!-- dining room battery status -->
+    <ion-slide class="slide">
+      <div class="circle">
+        <span>
+          <!-- battery percentage circle -->
+          <circle-progress [percent]="this.batteryLevels[2]" [radius]="130" [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8" [outerStrokeColor]="this.getBatteryColour(this.batteryLevels[2])"
+            [innerStrokeColor]="'#E8E8E8'" [animation]="true" [animationDuration]="300">
+          </circle-progress>
+        </span>
+        <span>
+          <p>Dining Room</p>
+        </span>
+      </div>
+    </ion-slide>
+
+    <!-- toilet room battery status -->
+    <ion-slide class="slide">
+      <div class="circle">
+        <span>
+          <!-- battery percentage circle -->
+          <circle-progress [percent]="this.batteryLevels[3]" [radius]="130" [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8" [outerStrokeColor]="this.getBatteryColour(this.batteryLevels[3])"
+            [innerStrokeColor]="'#E8E8E8'" [animation]="true" [animationDuration]="300">
+          </circle-progress>
+        </span>
+        <span>
+          <p>Toilet</p>
+        </span>
+      </div>
+    </ion-slide>
+
+    <!-- bedroom room battery status -->
+    <ion-slide class="slide">
+      <div class="circle">
+        <span>
+          <!-- battery percentage circle -->
+          <circle-progress [percent]="this.batteryLevels[4]" [radius]="130" [outerStrokeWidth]="16"
+            [innerStrokeWidth]="8" [outerStrokeColor]="this.getBatteryColour(this.batteryLevels[4])"
+            [innerStrokeColor]="'#E8E8E8'" [animation]="true" [animationDuration]="300">
+          </circle-progress>
+        </span>
+        <span>
+          <p>Bedroom</p>
+        </span>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
